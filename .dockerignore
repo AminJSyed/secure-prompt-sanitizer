@@ -1,7 +1,19 @@
 .venv/
-.env/
+venv/
+env/
+
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
 __pycache__/
+**/__pycache__/
 *.pyc
+
 .git/
 .DS_Store
 
@@ -11,3 +23,4 @@ frontend/dist/
 node_modules/
 dist/
 *.log
+logs/
