@@ -263,3 +263,42 @@ pre {
     font-size: 32px;
   }
 }
+
+/* Larger and more readable action buttons */
+button {
+  font-size: 15px;
+  padding: 14px 22px;
+  min-height: 46px;
+  border-radius: 14px;
+}
+
+/* Main sanitize button */
+.composerFooter button {
+  font-size: 15px;
+  padding: 15px 24px;
+  min-width: 240px;
+}
+
+/* Copy buttons in result cards */
+.resultHeader button {
+  font-size: 14px;
+  padding: 11px 18px;
+  min-width: 86px;
+  min-height: 42px;
+}
+
+/* File remove button should stay smaller */
+.fileItem button,
+.filePreviewCard button {
+  font-size: 12px;
+  padding: 8px 12px;
+  min-width: auto;
+  min-height: auto;
+}
+
+/* Attach button should stay circular */
+.attachButton {
+  width: 52px;
+  height: 52px;
+  font-size: 30px;
+}
