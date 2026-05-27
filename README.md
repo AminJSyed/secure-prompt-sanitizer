@@ -2,15 +2,13 @@
 
 Secure Prompt Sanitizer is a local-first React and FastAPI application that helps developers sanitize logs, configs, screenshots, errors, and API output before sharing them with public AI tools.
 
-The goal is simple: reduce the risk of accidentally exposing secrets such as tokens, passwords, API keys, database URLs, cookies, private IPs, local file paths, or internal details while debugging with AI.
+It helps reduce the risk of accidentally exposing sensitive values such as tokens, passwords, API keys, cookies, database URLs, private IPs, local file paths, and internal details while debugging with AI.
 
 ## Why this project matters
 
 Developers often copy logs, stack traces, screenshots, configuration files, and terminal output into AI tools for troubleshooting.
 
-These inputs can accidentally contain sensitive values.
-
-Secure Prompt Sanitizer helps by detecting and masking sensitive data locally before generating a safer AI-ready query.
+These inputs can accidentally contain sensitive values. Secure Prompt Sanitizer detects and masks sensitive data locally before generating a safer AI-ready query.
 
 ## Features
 
@@ -60,15 +58,23 @@ The sanitizer can detect and mask examples such as:
 - Local paths
 - Secret-like configuration values
 
+## Example
+
 Example input:
 
 ```text
 password=DemoPassword123 Authorization: Bearer abc123
+```
 
 Sanitized output:
 
+```text
 <SECRET_ASSIGNMENT> Authorization: Bearer <TOKEN>
-Project Structure
+```
+
+## Project Structure
+
+```text
 secure-prompt-sanitizer/
   backend/
     api.py
@@ -89,46 +95,73 @@ secure-prompt-sanitizer/
   docker-compose.yml
   requirements.txt
   README.md
-Run with Docker
+```
+
+## Run with Docker
 
 Build and start the full application:
 
+```bash
 docker compose up --build
+```
 
 Frontend:
 
+```text
 http://127.0.0.1:5173
+```
 
 Backend health check:
 
+```text
 http://127.0.0.1:8000/health
+```
 
 API docs:
 
+```text
 http://127.0.0.1:8000/docs
-Run backend manually
+```
+
+## Run backend manually
+
+Create and activate a virtual environment, then start the FastAPI backend:
+
+```bash
 source .venv/bin/activate
 uvicorn backend.api:app --host 127.0.0.1 --port 8000 --reload
+```
 
 Test health:
 
+```bash
 curl http://127.0.0.1:8000/health
+```
 
 Test sanitize endpoint:
 
+```bash
 curl -X POST http://127.0.0.1:8000/sanitize \
   -F "text=password=DemoPassword123 Authorization: Bearer abc123" \
   -F "user_goal=Help me safely share this error" \
   -F "manual_masks="
-Run frontend manually
+```
+
+## Run frontend manually
+
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 Open:
 
+```text
 http://127.0.0.1:5173
-Security Notes
+```
+
+## Security notes
 
 This project is designed as a local-first sanitizer.
 
@@ -136,19 +169,21 @@ It does not call any AI API or send data to cloud services by default.
 
 Users should still manually review sanitized output before sharing it publicly.
 
-Do not commit real secrets, production logs, private keys, .env files, customer data, or internal credentials.
+Do not commit real secrets, production logs, private keys, `.env` files, customer data, or internal credentials.
 
-Roadmap
-Add more detection rules
-Improve OCR accuracy
-Add better screenshot preview handling
-Add unit tests for detector patterns
-Add CI checks for backend and frontend
-Add production-ready frontend build using Nginx
-Add downloadable sanitized report
-Author
+## Roadmap
 
-Amin Jafar Syed
+- Add more detection rules
+- Improve OCR accuracy
+- Add better screenshot preview handling
+- Add unit tests for detector patterns
+- Add CI checks for backend and frontend
+- Add production-ready frontend build using Nginx
+- Add downloadable sanitized report
+
+## Author
+
+Amin Jafar Syed  
 Principal Engineering Lead, DevSecOps, Cloud, Security, AI-Assisted Engineering and Automation
 
 GitHub: https://github.com/AminJSyed
