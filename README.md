@@ -115,10 +115,29 @@ secure-prompt-sanitizer/
 
 Published container images are available on GitHub Container Registry.
 
+### Backend
+
 ```bash
 docker pull ghcr.io/aminjsyed/secure-prompt-sanitizer-backend:latest
+```
+
+Available tags:
+
+- `latest`
+- `0.1.0`
+
+### Frontend
+
+```bash
 docker pull ghcr.io/aminjsyed/secure-prompt-sanitizer-frontend:latest
 ```
+
+Available tags:
+
+- `latest`
+- `0.1.0`
+
+For reproducible usage, prefer the versioned tag `0.1.0`. For the newest published image, use `latest`.
 
 ## Run with Docker
 
