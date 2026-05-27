@@ -1,5 +1,11 @@
 FROM node:20-alpine
 
+LABEL org.opencontainers.image.title="Secure Prompt Sanitizer Frontend"
+LABEL org.opencontainers.image.description="React frontend for Secure Prompt Sanitizer"
+LABEL org.opencontainers.image.source="https://github.com/AminJSyed/secure-prompt-sanitizer"
+LABEL org.opencontainers.image.licenses="MIT"
+
+
 WORKDIR /app
 
 COPY frontend/package*.json ./
