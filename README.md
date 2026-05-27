@@ -111,6 +111,15 @@ secure-prompt-sanitizer/
   README.md
 ```
 
+## Docker Images
+
+Published container images are available on GitHub Container Registry.
+
+```bash
+docker pull ghcr.io/aminjsyed/secure-prompt-sanitizer-backend:latest
+docker pull ghcr.io/aminjsyed/secure-prompt-sanitizer-frontend:latest
+```
+
 ## Run with Docker
 
 Build and start the full application:
