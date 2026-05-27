@@ -4,6 +4,16 @@ Secure Prompt Sanitizer is a local-first React and FastAPI application that help
 
 It helps reduce the risk of accidentally exposing sensitive values such as tokens, passwords, API keys, cookies, database URLs, private IPs, local file paths, and internal details while debugging with AI.
 
+## Screenshots
+
+### Application UI
+
+![Secure Prompt Sanitizer UI](docs/images/app-home.png)
+
+### Sanitized Output
+
+![Sanitized output](docs/images/sanitized-output.png)
+
 ## Why this project matters
 
 Developers often copy logs, stack traces, screenshots, configuration files, and terminal output into AI tools for troubleshooting.
