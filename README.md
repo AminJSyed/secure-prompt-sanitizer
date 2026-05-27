@@ -14,6 +14,10 @@ It helps reduce the risk of accidentally exposing sensitive values such as token
 
 ![Sanitized output](docs/images/sanitized-output.png)
 
+### Generated Safe Query Output
+
+![Generated safe query output](docs/images/generated-safe-query-output.png)
+
 ## Why this project matters
 
 Developers often copy logs, stack traces, screenshots, configuration files, and terminal output into AI tools for troubleshooting.
